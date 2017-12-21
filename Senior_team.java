@@ -42,45 +42,32 @@ public class Senior_team extends OpMode {
         Claw_1 = hardwareMap.servo.get("Claw_1");
         Claw_2 = hardwareMap.servo.get("Claw_2");
 
-        @Override
-        public void loop() {
+    }
+    @Override
+    public void loop() {
+        if (gamepad1.y){
 
-        Motor_1.setPower(1.0);
-        Motor_2.setPower(1.0);
-        Motor_3.setPower(1.0);
-        Motor_4.setPower(1.0);
+            Claw_1.setPosition(1);
+            Claw_2.setPosition(1);
+        } else if (gamepad1.b) {
 
-        Motor_1.setDirection(DcMotorSimple.Direction.REVERSE);
+            Claw_1.setPosition(0);
+            Claw_2.setPosition(0);
 
-        waitForStart();
-
-        while (opModeInactive())
-        {
             Motor_1.setPower(gamepad1.left_stick_y);
             Motor_3.setPower(gamepad1.left_stick_y);
 
             Motor_2.setPower(gamepad1.right_stick_y);
             Motor_4.setPower(gamepad1.right_stick_y);
 
-            if (gamepad2.a)
-            {
-                Claw_1.setPosition(1);
-            }
 
-            if (gamepad2.b)
-            {
-                Claw_1.setPosition(0);
-            }
 
-            if (gamepad2.a)
-            {
-                Claw_2.setPosition(1);
-            }
 
-            if (gamepad2.b)
-            {
-                Claw_2.setPosition(0);
-            }
+
+
+
         }
 
+
     }
+}
