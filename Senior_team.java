@@ -42,6 +42,9 @@ public class Senior_team extends OpMode {
         Claw_1 = hardwareMap.servo.get("Claw_1");
         Claw_2 = hardwareMap.servo.get("Claw_2");
 
+        @Override
+        public void loop() {
+
         Motor_1.setPower(1.0);
         Motor_2.setPower(1.0);
         Motor_3.setPower(1.0);
@@ -81,4 +84,3 @@ public class Senior_team extends OpMode {
         }
 
     }
-}
